@@ -1,0 +1,38 @@
+name: Build Docker image
+on:
+  workflow_dispatch:
+  push:
+#    branches:
+#      - main
+#  schedule:
+#    - cron: "0 0 * * 0"
+
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+      - name: Run the build
+        run: |
+          export DATE=$(date +%Y%m%d)
+          # use that here since the variable are not present before start, so can't be in env
+          export LOGIN=$GITHUB_REPOSITORY_OWNER
+
+          echo $PASSWORD | docker login $REGISTRY -u $LOGIN --password-stdin
+
+          export IMAGE=$LOGIN/stalwart_bootc
+
+          docker build . --tag $REGISTRY/$IMAGE:$DATE --tag $REGISTRY/$IMAGE:latest
+          docker push $REGISTRY/$IMAGE:latest
+          docker push $REGISTRY/$IMAGE:$DATE
+        env:
+          REGISTRY: ghcr.io
+          PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+

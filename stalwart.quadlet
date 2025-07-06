@@ -1,0 +1,27 @@
+[Unit]
+Description=Stalwart container
+After=local-fs.target
+
+[Service]
+StateDirectory=stalwart
+DynamicUser=yes
+User=stalwart
+
+[Container]
+Image=docker.io/stalwartlabs/stalwart:latest
+PublishPort=25   # SMTP
+PublishPort=465  # SMTPS
+PublishPort=4587 # submission
+PublishPort=8080 # http
+PublishPort=443  # https
+PublishPort=143  # imap
+PublishPort=993  # imaps
+PublishPort=4190 # sieve 
+PublishPort=110  # pop3
+PublishPort=995  # pop3s
+
+Volume=/var/lib/stalwart:/opt/stalwart
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
