@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora-bootc@sha256:c4b79090be7709e35f967447693f006ad0d156c23c73cb6a59483e2e1781e1b9
+FROM quay.io/fedora/fedora-bootc@sha256:0f9666989dfb1efdaaef653619998cafacb63aff15cda5e8709a04cd73f52e0b
 
 #
 # empty space for easier rebasing
