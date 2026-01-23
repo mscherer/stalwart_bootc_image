@@ -9,6 +9,8 @@ User=stalwart
 
 [Container]
 Image=docker.io/stalwartlabs/stalwart:latest
+AutoUpdate=registry
+
 PublishPort=25   # SMTP
 PublishPort=465  # SMTPS
 PublishPort=4587 # submission
