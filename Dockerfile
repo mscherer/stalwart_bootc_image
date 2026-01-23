@@ -4,5 +4,6 @@ FROM quay.io/fedora/fedora-bootc@sha256:30d0a50a13fbe8e30dd9592d4e3af7f2ca2f0e78
 # empty space for easier rebasing
 #
 
-COPY stalwart.quadlet /etc/systemd/system/stalwart.service 
+RUN mkdir -p /var/lib/stalwart
+COPY stalwart.container /etc/containers/systemd/stalwart.container
 RUN bootc container lint --fatal-warnings 
