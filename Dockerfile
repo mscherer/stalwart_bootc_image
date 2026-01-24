@@ -5,7 +5,7 @@ FROM quay.io/bootc-devel/fedora-bootc-43-minimal@sha256:448f745d3240001e7275d102
 
 # install caddy (reverse proxy)
 RUN <<EORUN
-dnf install -y --setopt=install_weak_deps=false -y caddy socat htop mosh iftop strace tcpdump vim nmap lshw
+dnf install -y --setopt=install_weak_deps=false -y caddy socat htop mosh iftop strace tcpdump vim nmap lshw openssh-server
 dnf clean all
 rm -Rf /var/log/dnf5.log /var/lib/dnf/ /var/cache/
 EORUN
