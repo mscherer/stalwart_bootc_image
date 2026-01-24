@@ -8,7 +8,7 @@ RUN <<EORUN
 dnf install -y --setopt=install_weak_deps=false caddy 
 systemctl enable caddy
 
-dnf install -y --setopt=install_weak_deps=false htop iftop strace tcpdump lshw
+dnf install -y --setopt=install_weak_deps=false htop iftop strace tcpdump lshw iproute
 
 dnf install -y --setopt=install_weak_deps=false openssh-server systemd-networkd-defaults systemd-networkd
 systemctl enable systemd-networkd sshd
