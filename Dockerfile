@@ -10,4 +10,5 @@ dnf clean all
 rm -Rf /var/log/dnf5.log /var/lib/dnf/ /var/cache/
 EORUN
 COPY stalwart.container /etc/containers/systemd/stalwart.container
+COPY caddy.tmpfile.conf /usr/lib/tmpfiles.d/caddy.conf
 RUN bootc container lint --fatal-warnings 
