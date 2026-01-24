@@ -1,9 +1,13 @@
-FROM quay.io/fedora/fedora-bootc@sha256:30d0a50a13fbe8e30dd9592d4e3af7f2ca2f0e78b65b10959a66d054bc807129
-
+FROM quay.io/bootc-devel/fedora-bootc-43-minimal@sha256:448f745d3240001e7275d102b590ebb1d093e8928447e8664aef2cc9aa34ec5c
 #
 # empty space for easier rebasing
 #
 
-RUN mkdir -p /var/lib/stalwart
+# install caddy (reverse proxy)
+RUN <<EORUN
+dnf install -y --setopt=install_weak_deps=false -y caddy socat htop mosh iftop strace tcpdump vim nmap lshw
+dnf clean all
+rm -Rf /var/log/dnf5.log /var/lib/dnf/ /var/cache/
+EORUN
 COPY stalwart.container /etc/containers/systemd/stalwart.container
 RUN bootc container lint --fatal-warnings 
