@@ -1,0 +1,5 @@
+# https://systemd.io/PRESET/
+# If multiple lines apply to a unit name, the first matching one takes precedence over all others.
+enable caddy.service
+enable systemd-networkd.service
+enable sshd.service
