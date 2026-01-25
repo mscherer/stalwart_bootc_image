@@ -4,8 +4,11 @@ After=local-fs.target
 
 [Service]
 StateDirectory=stalwart
-DynamicUser=yes
-User=stalwart
+# do not use those, as it doesn't seems to start with a error message 'cannot stat /.config' (likely podman
+# cf https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html
+# "Note that Quadlet units do not support running as a non-root user by defining the User, Group, or DynamicUser systemd options."
+#DynamicUser=yes
+#User=stalwart
 
 [Container]
 Image=docker.io/stalwartlabs/stalwart:latest
