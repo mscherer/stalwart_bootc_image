@@ -35,7 +35,7 @@ PublishPort=4190:4190
 # pop3s
 #PublishPort=995:995
 
-Volume=/var/lib/stalwart:/opt/stalwart
+Volume=/var/lib/stalwart:/opt/stalwart:Z
 
 [Install]
 # Start by default on boot
