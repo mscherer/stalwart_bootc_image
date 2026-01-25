@@ -5,13 +5,19 @@ FROM quay.io/bootc-devel/fedora-bootc-43-minimal@sha256:448f745d3240001e7275d102
 
 # install caddy (reverse proxy)
 RUN <<EORUN
+# https://systemd.io/PRESET/
+# If multiple lines apply to a unit name, the first matching one takes precedence over all others.
+echo > /usr/lib/systemd/system-preset/01-mail_server.preset <<EOF
+enable caddy.service
+enable systemd-networkd.service
+enable sshd.service
+EOF
+
 dnf install -y --setopt=install_weak_deps=false caddy 
-systemctl enable caddy
 
 dnf install -y --setopt=install_weak_deps=false htop iftop strace tcpdump lshw iproute
 
 dnf install -y --setopt=install_weak_deps=false openssh-server systemd-networkd-defaults systemd-networkd
-systemctl enable systemd-networkd sshd
 
 dnf install -y --setopt=install_weak_deps=false vim-minimal
 dnf clean all
