@@ -13,6 +13,12 @@ enable systemd-networkd.service
 enable sshd.service
 EOF
 
+# disable the flood of message on the console
+echo > /etc/sysctl.d/disable-flood.conf <<EOF
+# https://superuser.com/questions/351387/how-to-stop-kernel-messages-from-flooding-my-console
+kernel.printk="2 4 1 7"
+EOF
+
 dnf install -y --setopt=install_weak_deps=false caddy 
 
 dnf install -y --setopt=install_weak_deps=false htop iftop strace tcpdump lshw iproute
