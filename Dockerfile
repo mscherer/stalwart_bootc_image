@@ -6,6 +6,9 @@ FROM quay.io/bootc-devel/fedora-bootc-43-minimal@sha256:448f745d3240001e7275d102
 COPY mail_server.preset /usr/lib/systemd/system-preset/01-mail_server.preset
 # install caddy (reverse proxy)
 RUN <<EORUN
+# fix/workaround https://bugzilla.redhat.com/show_bug.cgi?id=2432642
+dnf install -y --setopt=install_weak_deps=false bwrap
+
 dnf install -y --setopt=install_weak_deps=false caddy 
 
 dnf install -y --setopt=install_weak_deps=false htop iftop strace tcpdump lshw iproute
