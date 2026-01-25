@@ -21,7 +21,7 @@ PublishPort=465:465
 # submission
 PublishPort=4587:4587
 # http
-PublishPort=8080:127.0.0.1:8080
+PublishPort=127.0.0.1:8080:8080
 # https
 #PublishPort=443:443
 # imap
