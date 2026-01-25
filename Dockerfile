@@ -21,6 +21,6 @@ rm -Rf /var/log/dnf5.log /var/lib/dnf/ /var/cache/
 EORUN
 # disable the flood of message on the console
 COPY disable-flood.conf /usr/lib/sysctl.d/60-disable-flood.conf
-COPY stalwart.container /etc/containers/systemd/stalwart.container
+COPY stalwart.container /usr/share/containers/systemd/stalwart.container
 COPY caddy.tmpfile.conf /usr/lib/tmpfiles.d/caddy.conf
 RUN bootc container lint --fatal-warnings 
