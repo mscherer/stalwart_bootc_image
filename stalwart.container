@@ -15,25 +15,25 @@ Image=docker.io/stalwartlabs/stalwart:latest
 AutoUpdate=registry
 
 # SMTP
-PublishPort=25   
+PublishPort=25:25   
 # SMTPS
-PublishPort=465
+PublishPort=465:465
 # submission
-PublishPort=4587
+PublishPort=4587:4587
 # http
-PublishPort=127.0.0.1:8080
+PublishPort=8080:127.0.0.1:8080
 # https
-#PublishPort=443
+#PublishPort=443:443
 # imap
-PublishPort=143
+PublishPort=143:143
 # imaps
-PublishPort=993
+PublishPort=993:993
 # sieve
-PublishPort=4190
+PublishPort=4190:4190
 # pop3
-#PublishPort=110
+#PublishPort=110:110
 # pop3s
-#PublishPort=995
+#PublishPort=995:995
 
 Volume=/var/lib/stalwart:/opt/stalwart
 
