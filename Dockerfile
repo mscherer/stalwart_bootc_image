@@ -9,11 +9,11 @@ COPY mail_server.preset /usr/lib/systemd/system-preset/01-mail_server.preset
 # install caddy (reverse proxy) and various stuff
 RUN <<EORUN
 # fix/workaround https://bugzilla.redhat.com/show_bug.cgi?id=2432642
-dnf install -y --setopt=install_weak_deps=false bwrap
+dnf install -y --setopt=install_weak_deps=false bubblewrap
 
 dnf install -y --setopt=install_weak_deps=false caddy
 
-dnf install -y --setopt=install_weak_deps=false htop iftop strace tcpdump lshw iproute
+dnf install -y --setopt=install_weak_deps=false htop iftop strace tcpdump lshw iproute jq
 # systemd-networkd-defaults pull systemd-networkd
 dnf install -y --setopt=install_weak_deps=false openssh-server systemd-networkd-defaults
 
