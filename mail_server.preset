@@ -3,3 +3,4 @@
 enable caddy.service
 enable systemd-networkd.service
 enable sshd.service
+enable bootc-fetch-apply-updates.timer
