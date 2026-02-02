@@ -29,4 +29,5 @@ COPY stalwart.container /usr/share/containers/systemd/stalwart.container
 # needed as bootc container lint complain about it. Some work should be done
 # to get if fixed upstream
 COPY caddy.tmpfile.conf /usr/lib/tmpfiles.d/caddy.conf
+COPY motd.conf /usr/lib/motd.d/
 RUN bootc container lint --fatal-warnings
