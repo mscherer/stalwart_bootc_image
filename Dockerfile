@@ -31,4 +31,8 @@ COPY stalwart.container /usr/share/containers/systemd/stalwart.container
 # to get if fixed upstream
 COPY caddy.tmpfile.conf /usr/lib/tmpfiles.d/caddy.conf
 COPY motd.conf /usr/lib/motd.d/
+
+COPY set_hostname.service /usr/lib/systemd/system/set_hostname.service
+COPY set_hostname.sh      /usr/local/bin/set_hostname.sh
+
 RUN bootc container lint --fatal-warnings

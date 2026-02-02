@@ -1,0 +1,8 @@
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/set_hostname.sh
+
+[Install]
+WantedBy=multi-user.target
+
