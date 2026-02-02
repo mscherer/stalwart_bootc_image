@@ -13,11 +13,12 @@ dnf install -y --setopt=install_weak_deps=false bubblewrap
 
 dnf install -y --setopt=install_weak_deps=false caddy
 
-dnf install -y --setopt=install_weak_deps=false htop iftop strace tcpdump lshw iproute jq
+# removed, can be installed with bootc usr-overlay
+#dnf install -y --setopt=install_weak_deps=false vim-minimal
+#dnf install -y --setopt=install_weak_deps=false htop iftop strace tcpdump lshw iproute jq
 # systemd-networkd-defaults pull systemd-networkd
 dnf install -y --setopt=install_weak_deps=false openssh-server systemd-networkd-defaults
 
-dnf install -y --setopt=install_weak_deps=false vim-minimal
 dnf clean all
 rm -Rf /var/log/dnf5.log /var/lib/dnf/ /var/cache/
 EORUN
