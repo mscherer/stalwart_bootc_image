@@ -4,3 +4,4 @@ enable caddy.service
 enable systemd-networkd.service
 enable sshd.service
 enable bootc-fetch-apply-updates.timer
+enable set_hostname.service
