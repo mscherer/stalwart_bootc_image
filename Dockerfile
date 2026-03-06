@@ -35,4 +35,8 @@ COPY motd.conf /usr/lib/motd.d/
 COPY set_hostname/set_hostname.service /usr/lib/systemd/system/set_hostname.service
 COPY set_hostname/set_hostname.sh      /usr/local/bin/set_hostname.sh
 
+COPY set_ipv6/set_ipv6.service /usr/lib/systemd/system/set_ipv6.service
+COPY set_ipv6/set_ipv6.sh      /usr/local/bin/set_ipv6.sh
+
+
 RUN bootc container lint --fatal-warnings

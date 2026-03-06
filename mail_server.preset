@@ -5,3 +5,4 @@ enable systemd-networkd.service
 enable sshd.service
 enable bootc-fetch-apply-updates.timer
 enable set_hostname.service
+enable set_ipv6.service
