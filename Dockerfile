@@ -29,7 +29,7 @@ COPY disable-flood.conf /usr/lib/sysctl.d/60-disable-flood.conf
 COPY stalwart.container /usr/share/containers/systemd/stalwart.container
 # needed as bootc container lint complain about it. Some work should be done
 # to get if fixed upstream
-COPY caddy.tmpfile.conf /usr/lib/tmpfiles.d/caddy.conf
+COPY container_lint.tmpfiles.conf /usr/lib/tmpfiles.d/container_lint.conf
 COPY motd.conf /usr/lib/motd.d/
 
 COPY set_hostname/set_hostname.service /usr/lib/systemd/system/set_hostname.service
