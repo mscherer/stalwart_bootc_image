@@ -1,5 +1,7 @@
-[Service]
+[Unit]
 After=systemd-networkd-wait-online.service
+
+[Service]
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/local/bin/set_ipv6.sh
