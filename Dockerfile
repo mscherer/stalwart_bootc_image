@@ -21,6 +21,7 @@ dnf install -y --setopt=install_weak_deps=false openssh-server systemd-networkd-
 
 dnf clean all
 rm -Rf /var/log/dnf5.log /var/lib/dnf/ /var/cache/
+rm -Rf /var/lib/systemd/random-seed
 EORUN
 
 # disable the flood of message on the console
