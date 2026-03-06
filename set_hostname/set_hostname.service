@@ -1,4 +1,5 @@
 [Service]
+After=systemd-networkd-wait-online.service
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/local/bin/set_hostname.sh
