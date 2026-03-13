@@ -22,8 +22,6 @@ dnf install -y --setopt=install_weak_deps=false openssh-server systemd-networkd-
 dnf clean all
 
 rm -Rf /var/log/dnf5.log /var/lib/dnf/ /var/cache/ /run/dnf 
-# temporary cleanup
-rm -Rf /var/lib/systemd/random-seed /var/lib/systemd/catalog/database /var/lib/tpm2-tss/ /var/lib/containers
 
 EORUN
 
