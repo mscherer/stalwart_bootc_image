@@ -1,4 +1,4 @@
-FROM quay.io/bootc-devel/fedora-bootc-43-minimal@sha256:488bacb2d9666bc918305c6feee04021ac0825c225d214d9ea476c01f1adb674
+FROM quay.io/bootc-devel/fedora-bootc-43-minimal@sha256:a61dd19b6bfaa30503a2783b23bf9c49a5b129c6543a375bbbab253645935445
 #
 # empty space for easier rebasing
 #
