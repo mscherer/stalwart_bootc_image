@@ -27,8 +27,11 @@ EORUN
 
 # disable the flood of message on the console
 COPY disable-flood.conf /usr/lib/sysctl.d/60-disable-flood.conf
+
 # add stalwart
-COPY stalwart.container /usr/share/containers/systemd/stalwart.container
+COPY stalwart/stalwart.container /usr/share/containers/systemd/stalwart.container
+COPY stalwart/config.json /usr/local/etc/config.json
+
 # needed as bootc container lint complain about it. Some work should be done
 # to get if fixed upstream
 COPY container_lint.tmpfiles.conf /usr/lib/tmpfiles.d/container_lint.conf

@@ -38,6 +38,7 @@ PublishPort=4190:4190
 PodmanArgs=--uts=host
 
 Volume=/var/lib/stalwart:/opt/stalwart:Z
+Volume=/usr/local/etc/config.json:/etc/stalwart/config.json:Z
 
 [Install]
 # Start by default on boot
