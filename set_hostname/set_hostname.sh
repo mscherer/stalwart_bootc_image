@@ -8,7 +8,8 @@ export HOSTNAME=$(curl http://169.254.169.254/1.0/meta-data/hostname)
 hostnamectl hostname $HOSTNAME
 
 # configure Caddy
-echo > /etc/caddy/Caddyfile <<EOF
+cat > /etc/caddy/Caddyfile <<EOF
+# configured by set_hostname.service
 $HOSTNAME
 reverse_proxy :8080
 EOF
