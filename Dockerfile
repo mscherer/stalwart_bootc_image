@@ -31,6 +31,7 @@ COPY disable-flood.conf /usr/lib/sysctl.d/60-disable-flood.conf
 # add stalwart
 COPY stalwart/stalwart.container /usr/share/containers/systemd/stalwart.container
 COPY stalwart/config.json /usr/local/etc/config.json
+COPY stalwart/stalwart-cli /usr/local/bin/stalwart-cli
 
 # needed as bootc container lint complain about it. Some work should be done
 # to get if fixed upstream
