@@ -11,7 +11,7 @@ StateDirectory=stalwart
 #User=stalwart
 
 [Container]
-Image=docker.io/stalwartlabs/stalwart:latest
+Image=ghcr.io/stalwartlabs/stalwart:latest
 AutoUpdate=registry
 
 # SMTP
