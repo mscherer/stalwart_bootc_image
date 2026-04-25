@@ -1,2 +1,0 @@
-#!/bin/sh
-podman exec -ti systemd-stalwart  /usr/local/bin/stalwart-cli
