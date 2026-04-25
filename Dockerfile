@@ -17,7 +17,7 @@ dnf install -y --setopt=install_weak_deps=false caddy
 #dnf install -y --setopt=install_weak_deps=false vim-minimal
 #dnf install -y --setopt=install_weak_deps=false htop iftop strace tcpdump lshw iproute jq
 # systemd-networkd-defaults pull systemd-networkd
-dnf install -y --setopt=install_weak_deps=false openssh-server systemd-networkd-defaults jq
+dnf install -y --setopt=install_weak_deps=false openssh-server systemd-networkd-defaults jq tar xz
 
 dnf clean all
 
