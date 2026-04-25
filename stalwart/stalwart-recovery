@@ -13,4 +13,4 @@ if [ "$1" == "on" ]; then
 else
 	echo "Recovery mode disabled"
 fi;
-systemctl daemon-reload && systemctl restart systemd-stalwart
+systemctl daemon-reload && systemctl restart stalwart
