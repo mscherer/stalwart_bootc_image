@@ -35,12 +35,14 @@ COPY stalwart/stalwart-recovery /usr/local/bin/stalwart-recovery
 
 RUN <<EORUN3
 PREFIX="x86_64-unknown-linux-gnu"
-BINARY="stalwart-cli-${PREFIX}/stalwart-cli"
+DIRECTORY="stalwart-cli-${PREFIX}"
+BINARY="${DIRECTORY}/stalwart-cli"
 URL=$(curl -s "https://api.github.com/repos/stalwartlabs/cli/releases/latest" | jq -r ".assets | map(select(.name == \"stalwart-cli-${PREFIX}.tar.xz\"))[0].browser_download_url")
 
 curl --silent --location ${URL} | tar --xz --directory /tmp --get --file - ${BINARY}
 
 mv /tmp/${BINARY} /usr/local/bin/stalwart-cli
+rm -Rf /tmp/${DIRECTORY}
 EORUN3
 
 COPY stalwart/stalwart_recovery_env.tmpfiles.conf /usr/lib/tmpfiles.d/stalwart_recovery_env.tmpfiles.conf
