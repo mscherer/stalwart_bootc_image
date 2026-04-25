@@ -37,6 +37,9 @@ PublishPort=4190:4190
 
 PodmanArgs=--uts=host
 
+# used for recovery and bootstrap
+EnvironmentHost=true
+
 Volume=/var/lib/stalwart:/var/lib/stalwart:Z,U
 Volume=/usr/local/etc/config.json:/etc/stalwart/config.json:ro
 
