@@ -1,0 +1,16 @@
+#!/bin/bash
+FILE=/run/stalwart-recovery.env
+USERNAME=admin
+PASSWORD=$(head /dev/random  | sha256sum | awk '{print $1}')
+
+echo "" > $FILE
+if [ "$1" == "on" ]; then
+	echo "STALWART_RECOVERY_MODE=1" >> $FILE
+	echo "STALWART_RECOVERY_ADMIN=$USERNAME:$PASSWORD" >> $FILE
+	echo "Recovery mode enabled"
+	echo " Username: $USERNAME"
+	echo " Password: $PASSWORD"
+else
+	echo "Recovery mode disabled"
+fi;
+systemctl daemon-reload && systemctl restart systemd-stalwart

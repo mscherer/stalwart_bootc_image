@@ -32,6 +32,9 @@ COPY disable-flood.conf /usr/lib/sysctl.d/60-disable-flood.conf
 COPY stalwart/stalwart.container /usr/share/containers/systemd/stalwart.container
 COPY stalwart/config.json /usr/local/etc/config.json
 COPY stalwart/stalwart-cli /usr/local/bin/stalwart-cli
+COPY stalwart/stalwart-recovery /usr/local/bin/stalwart-recovery
+
+COPY stalwart/stalwart_recovery_env.tmpfiles.conf /usr/lib/tmpfiles.d/stalwart_recovery_env.tmpfiles.conf
 
 # needed as bootc container lint complain about it. Some work should be done
 # to get if fixed upstream
