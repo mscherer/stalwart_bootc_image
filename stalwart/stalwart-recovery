@@ -10,7 +10,8 @@ if [ "$1" == "on" ]; then
 	echo "Recovery mode enabled"
 	echo " Username: $USERNAME"
 	echo " Password: $PASSWORD"
+	echo "Run the script again without a argument to disable the mode"
 else
-	echo "Recovery mode disabled"
+	echo "Recovery mode disabled, run this script with 'on' to enable it"
 fi;
 systemctl daemon-reload && systemctl restart stalwart
