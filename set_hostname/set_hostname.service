@@ -1,5 +1,6 @@
 [Unit]
 After=systemd-networkd-wait-online.service
+Before=caddy.service
 
 [Service]
 Type=oneshot
