@@ -7,3 +7,4 @@ enable bootc-fetch-apply-updates.timer
 enable podman-auto-update.timer
 enable set_hostname.service
 enable set_ipv6.service
+enable systemd-timesyncd.service
