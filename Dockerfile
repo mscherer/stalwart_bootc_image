@@ -25,6 +25,12 @@ COPY stalwart/stalwart.container /usr/share/containers/systemd/stalwart.containe
 COPY stalwart/config.json /usr/local/etc/config.json
 COPY stalwart/stalwart-recovery /usr/local/bin/stalwart-recovery
 
+# add the config system
+# it watch on a specific directory and I can upload the config with scp
+COPY stalwart-config/apply_stalwart_config.sh /usr/local/bin/apply_stalwart_config.sh
+COPY stalwart-config/apply_stalwart_config.service /usr/lib/systemd/system/apply_stalwart_config.service
+COPY stalwart-config/apply_stalwart_config.path /usr/lib/systemd/system/apply_stalwart_config.path
+
 RUN <<EORUN3
 PREFIX="x86_64-unknown-linux-gnu"
 DIRECTORY="stalwart-cli-${PREFIX}"

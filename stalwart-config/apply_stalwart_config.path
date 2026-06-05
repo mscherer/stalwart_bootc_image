@@ -1,0 +1,4 @@
+[Path]
+PathExistsGlob=/run/stalwart_config/*.json
+MakeDirectory=/run/stalwart_config/
+DirectoryMode=0700

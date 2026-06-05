@@ -1,0 +1,5 @@
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/run/stalwart_config/
+ExecStart=/usr/local/bin/apply_stalwart_config.sh
