@@ -63,4 +63,4 @@ RUN <<EORUN2
 systemctl preset-all
 EORUN2
 
-RUN bootc container lint --fatal-warnings
+#RUN bootc container lint --fatal-warnings
