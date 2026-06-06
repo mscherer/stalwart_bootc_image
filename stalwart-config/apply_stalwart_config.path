@@ -1,3 +1,6 @@
+[Unit]
+After=stalwart.service
+
 [Path]
 PathExistsGlob=/run/stalwart_config/*.json
 MakeDirectory=/run/stalwart_config/
