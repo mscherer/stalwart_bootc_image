@@ -1,6 +1,7 @@
 [Unit]
 After=stalwart.service
 Before=paths.target
+DefaultDependencies=no
 
 [Path]
 PathExistsGlob=/run/stalwart_config/*.json
