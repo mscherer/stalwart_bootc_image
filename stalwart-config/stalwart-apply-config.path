@@ -1,7 +1,8 @@
 [Unit]
 After=stalwart.service
-Before=paths.target
-DefaultDependencies=no
+
+[Install]
+WantedBy=multi-user.target
 
 [Path]
 PathExistsGlob=/run/stalwart_config/*.json
