@@ -50,6 +50,9 @@ Volume=/usr/local/etc/config.json:/etc/stalwart/config.json:ro
 Volume=/etc/pki:/etc/pki:O
 Volume=/etc/ssl:/etc/ssl:O
 
+# needed to download web apps
+Tmpfs=/tmp
+
 [Install]
 # Start by default on boot
 WantedBy=multi-user.target default.target
