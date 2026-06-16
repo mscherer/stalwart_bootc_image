@@ -31,6 +31,7 @@ COPY stalwart-config/apply_stalwart_config.sh /usr/local/bin/apply_stalwart_conf
 COPY stalwart-config/stalwart-apply-config.service /usr/lib/systemd/system/stalwart-apply-config.service
 COPY stalwart-config/stalwart-apply-config.path /usr/lib/systemd/system/stalwart-apply-config.path
 
+COPY nftables/firewall.nft /usr/local/etc/firewall.nft
 COPY nftables/nftables.conf /etc/sysconfig/nftables.conf
 
 RUN <<EORUN3
