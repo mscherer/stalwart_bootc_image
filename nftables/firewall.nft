@@ -18,6 +18,10 @@ table inet nftables_svc {
 		type inet_service
 		elements = { ssh, http, https, smtp, smtps, submission, imap, imaps }
 	}
+	set allowed_udp_dports {
+		type inet_service
+		elements = { https }
+	}
 
 	# this chain gathers all accept conditions
 	chain allow {
@@ -26,6 +30,7 @@ table inet nftables_svc {
 		meta l4proto @allowed_protocols accept
 		iifname @allowed_interfaces accept
 		tcp dport @allowed_tcp_dports accept
+		udp dport @allowed_udp_dports accept
 	}
 
 	# base-chain for traffic to this host
