@@ -14,6 +14,9 @@ StateDirectory=stalwart
 Image=ghcr.io/mscherer/stalwart-custom:latest
 AutoUpdate=registry
 
+#
+# Note: keep the firewall in the nftables up to date
+#
 # SMTP
 PublishPort=25:25   
 # SMTPS
@@ -29,7 +32,7 @@ PublishPort=143:143
 # imaps
 PublishPort=993:993
 # sieve
-PublishPort=4190:4190
+PublishPort=127.0.0.1:4190:4190
 # pop3
 #PublishPort=110:110
 # pop3s
