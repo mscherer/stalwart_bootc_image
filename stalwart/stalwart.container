@@ -50,6 +50,10 @@ Volume=/usr/local/etc/config.json:/etc/stalwart/config.json:ro
 Volume=/etc/pki:/etc/pki:O
 Volume=/etc/ssl:/etc/ssl:O
 
+# for logging purpose
+Volume=/var/log/stalwart:/var/log/stalwart:Z,U
+Volume=/dev/log:/dev/log
+
 # needed to download web apps
 Tmpfs=/tmp
 

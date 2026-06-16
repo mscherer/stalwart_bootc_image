@@ -24,6 +24,7 @@ COPY disable-flood.conf /usr/lib/sysctl.d/60-disable-flood.conf
 COPY stalwart/stalwart.container /usr/share/containers/systemd/stalwart.container
 COPY stalwart/config.json /usr/local/etc/config.json
 COPY stalwart/stalwart-recovery /usr/local/bin/stalwart-recovery
+COPY stalwart/stalwart.tmpfiles.conf /usr/lib/tmpfiles.d/stalwart.tmpfiles.conf
 
 # add the config system
 # it watch on a specific directory and I can upload the config with scp
