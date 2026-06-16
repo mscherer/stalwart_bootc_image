@@ -31,6 +31,8 @@ COPY stalwart-config/apply_stalwart_config.sh /usr/local/bin/apply_stalwart_conf
 COPY stalwart-config/stalwart-apply-config.service /usr/lib/systemd/system/stalwart-apply-config.service
 COPY stalwart-config/stalwart-apply-config.path /usr/lib/systemd/system/stalwart-apply-config.path
 
+COPY nftables/nftables.conf /etc/sysconfig/nftables.conf
+
 RUN <<EORUN3
 PREFIX="x86_64-unknown-linux-gnu"
 DIRECTORY="stalwart-cli-${PREFIX}"

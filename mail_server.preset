@@ -8,4 +8,5 @@ enable podman-auto-update.timer
 enable set_hostname.service
 enable set_ipv6.service
 enable systemd-timesyncd.service
-enable stalwart-apply-config.path 
+enable stalwart-apply-config.path
+enable nftables.service
