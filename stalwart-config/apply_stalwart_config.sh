@@ -7,7 +7,7 @@ set -a
 source /run/stalwart-recovery.env
 set +a
 
-for PLAN_FILE in *.json; do
+for PLAN_FILE in *.{nd,}json; do
 	/usr/local/bin/stalwart-cli apply --file ${PLAN_FILE}
 	rm -f ${PLAN_FILE}
 done
