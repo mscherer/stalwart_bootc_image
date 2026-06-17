@@ -5,5 +5,5 @@ WantedBy=multi-user.target
 
 [Path]
 PathExistsGlob=/run/stalwart_config/*.json
-MakeDirectory=/run/stalwart_config/
+MakeDirectory=true
 DirectoryMode=0700
