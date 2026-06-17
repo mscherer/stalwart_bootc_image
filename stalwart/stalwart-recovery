@@ -9,7 +9,7 @@ if [ "$1" == "on" ]; then
 	echo "STALWART_PASSWORD=$STALWART_PASSWORD" >> $FILE
 	echo "STALWART_RECOVERY_MODE=1" >> $FILE
 	echo "STALWART_RECOVERY_ADMIN=$STALWART_USER:$STALWART_PASSWORD" >> $FILE
-	echo "STALWART_URL=http://127.0.0.1:8080/"
+	echo "STALWART_URL=http://127.0.0.1:8080/" >> $FILE
 	echo "Recovery mode enabled"
 	echo " Username: $STALWART_USER"
 	echo " Password: $STALWART_PASSWORD"
