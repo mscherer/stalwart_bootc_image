@@ -8,7 +8,8 @@ RUN <<EORUN
 # bug fixes
 # fix/workaround https://bugzilla.redhat.com/show_bug.cgi?id=2432642
 dnf install -y --setopt=install_weak_deps=false bubblewrap
-# to report once I have a answer on dbus 
+# broken due to https://src.fedoraproject.org/rpms/systemd/c/67538c79f250eecbd904aa87e72a44cb3b5ef6f4
+# fix/workaround https://bugzilla.redhat.com/show_bug.cgi?id=2507313 
 dnf install -y --setopt=install_weak_deps=false dbus
 
 dnf install -y --setopt=install_weak_deps=false caddy
