@@ -10,7 +10,7 @@ else
 	export HOSTNAME=$(curl http://169.254.169.254/1.0/meta-data/hostname)
 fi;
 
-DOMAIN="$(HOSTNAME#*.}"
+DOMAIN="${HOSTNAME#*.}"
 hostnamectl hostname $HOSTNAME
 
 # configure Caddy
