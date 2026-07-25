@@ -22,6 +22,8 @@ reverse_proxy :8080
 
 $DOMAIN {
 	# beware uri already use /
-	redir https://$HOSTNAME{uri}
+	# use 307, so POST do not become a GET
+	# this break jmap in a hard to debug way
+	redir https://$HOSTNAME{uri} 307
 }
 EOF
