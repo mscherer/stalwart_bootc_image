@@ -21,6 +21,7 @@ reverse_proxy :8080
 }
 
 $DOMAIN {
-	redir https://$HOSTNAME/{uri}
+	# beware uri already use /
+	redir https://$HOSTNAME{uri}
 }
 EOF
