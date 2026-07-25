@@ -5,8 +5,11 @@ FROM quay.io/bootc-devel/fedora-bootc-44-minimal@sha256:17a7230c2e41360beef7c93f
 
 # install caddy (reverse proxy) and various stuff
 RUN <<EORUN
+# bug fixes
 # fix/workaround https://bugzilla.redhat.com/show_bug.cgi?id=2432642
 dnf install -y --setopt=install_weak_deps=false bubblewrap
+# to report once I have a answer on dbus 
+dnf install -y --setopt=install_weak_deps=false dbus
 
 dnf install -y --setopt=install_weak_deps=false caddy
 
