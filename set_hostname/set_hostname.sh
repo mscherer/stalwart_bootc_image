@@ -10,11 +10,17 @@ else
 	export HOSTNAME=$(curl http://169.254.169.254/1.0/meta-data/hostname)
 fi;
 
+DOMAIN="$(HOSTNAME#*.}"
 hostnamectl hostname $HOSTNAME
 
 # configure Caddy
 cat > /etc/caddy/Caddyfile <<EOF
 # configured by set_hostname.service
-$HOSTNAME
+$HOSTNAME {
 reverse_proxy :8080
+}
+
+$DOMAIN {
+	redir https://$HOSTNAME/{uri}
+}
 EOF
