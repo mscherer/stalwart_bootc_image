@@ -53,6 +53,8 @@ EORUN3
 
 COPY stalwart/stalwart_recovery_env.tmpfiles.conf /usr/lib/tmpfiles.d/stalwart_recovery_env.tmpfiles.conf
 
+COPY caddy/caddy.tmpfile.conf /usr/lib/tmpfiles.d/caddy.conf
+
 # needed as bootc container lint complain about it. Some work should be done
 # to get if fixed upstream
 COPY container_lint.tmpfiles.conf /usr/lib/tmpfiles.d/container_lint.conf
