@@ -17,7 +17,7 @@ hostnamectl hostname $HOSTNAME
 cat > /etc/caddy/Caddyfile <<EOF
 # configured by set_hostname.service
 $HOSTNAME {
-reverse_proxy :8080
+	reverse_proxy :8080
 }
 
 $DOMAIN {
