@@ -10,6 +10,7 @@ RUN <<EORUN
 dnf install -y --setopt=install_weak_deps=false bubblewrap
 # broken due to https://src.fedoraproject.org/rpms/systemd/c/67538c79f250eecbd904aa87e72a44cb3b5ef6f4
 # fix/workaround https://bugzilla.redhat.com/show_bug.cgi?id=2507313 
+# https://gitlab.com/fedora/bootc/base-images/-/merge_requests/646
 dnf install -y --setopt=install_weak_deps=false dbus
 
 dnf install -y --setopt=install_weak_deps=false caddy
