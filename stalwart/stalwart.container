@@ -57,6 +57,12 @@ Volume=/dev/log:/dev/log
 # needed to download web apps
 Tmpfs=/tmp
 
+# hardening
+ReadOnly=true
+NoNewPrivileges=true
+DropCapability=ALL
+
+
 [Install]
 # Start by default on boot
 WantedBy=multi-user.target default.target
