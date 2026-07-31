@@ -66,6 +66,8 @@ Tmpfs=/tmp
 ReadOnly=true
 NoNewPrivileges=true
 
+AddCapability=CAP_NET_BIND_SERVICE
+DropCapability=ALL
 
 [Install]
 # Start by default on boot
