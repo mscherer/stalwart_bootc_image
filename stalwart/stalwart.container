@@ -10,9 +10,23 @@ StateDirectory=stalwart
 #DynamicUser=yes
 #User=stalwart
 
-# hardening
-# do not use CapabilityBoundingSet=
-# too much are required by Quadlet to be useful (requires CAP_SYS_ADMIN for example)
+# hardening to test
+# break netavark: set sysctl net/ipv4/conf/eth0/arp_notify: IO error: Read-only file system (os error 30)
+#ProtectKernelTunables=true
+# not sure if that's so useful
+#SystemCallArchitectures=native
+# avoid attack on various file in /dev
+#DevicePolicy=closed
+# avoid loading modules
+#ProtectKernelModules=true
+# prevent pointer leaks
+#ProtectKernelLogs=true
+# just as a precaution
+#ProtectProc=invisible
+# netavark requires AF_NETLINK
+# systemd/journald use AF_UNIX
+#RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX AF_NETLINK
+
 
 [Container]
 Image=ghcr.io/mscherer/stalwart-custom:latest
