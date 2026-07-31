@@ -10,6 +10,9 @@ StateDirectory=stalwart
 #DynamicUser=yes
 #User=stalwart
 
+# hardening
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
 [Container]
 Image=ghcr.io/mscherer/stalwart-custom:latest
 AutoUpdate=registry
@@ -60,7 +63,6 @@ Tmpfs=/tmp
 # hardening
 ReadOnly=true
 NoNewPrivileges=true
-DropCapability=ALL
 
 
 [Install]
