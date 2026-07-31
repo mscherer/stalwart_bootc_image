@@ -57,6 +57,7 @@ Volume=/etc/ssl:/etc/ssl:O
 # for logging purpose
 Volume=/var/log/stalwart:/var/log/stalwart:Z,U
 Volume=/dev/log:/dev/log
+Volume=/run/systemd/journal/socket:/run/systemd/journal/socket
 
 # needed to download web apps
 Tmpfs=/tmp
