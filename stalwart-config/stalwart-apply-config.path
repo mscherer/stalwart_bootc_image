@@ -1,10 +1,6 @@
-[Unit]
-
 [Install]
 WantedBy=multi-user.target
 
 [Path]
 PathExistsGlob=/run/stalwart_config/*.ndjson
 PathExistsGlob=/run/stalwart_config/*.json
-MakeDirectory=yes
-DirectoryMode=0700

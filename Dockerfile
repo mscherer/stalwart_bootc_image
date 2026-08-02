@@ -36,6 +36,7 @@ COPY stalwart/stalwart.tmpfiles.conf /usr/lib/tmpfiles.d/stalwart.tmpfiles.conf
 COPY stalwart-config/apply_stalwart_config.sh /usr/local/bin/apply_stalwart_config.sh
 COPY stalwart-config/stalwart-apply-config.service /usr/lib/systemd/system/stalwart-apply-config.service
 COPY stalwart-config/stalwart-apply-config.path /usr/lib/systemd/system/stalwart-apply-config.path
+COPY stalwart-config/stalwart-apply-config.tmpfiles.conf /usr/lib/tmpfiles.d/stalwart-apply-config.conf
 
 COPY nftables/firewall.nft /usr/local/etc/firewall.nft
 COPY nftables/nftables.conf /etc/sysconfig/nftables.conf
