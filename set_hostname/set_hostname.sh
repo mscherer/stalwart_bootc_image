@@ -16,14 +16,8 @@ hostnamectl hostname $HOSTNAME
 # configure Caddy
 cat > /etc/caddy/Caddyfile <<EOF
 # configured by set_hostname.service
-$HOSTNAME {
+$HOSTNAME $DOMAIN {
 	reverse_proxy :8080
 }
 
-$DOMAIN {
-	# beware uri already use /
-	# use 307, so POST do not become a GET
-	# this break jmap in a hard to debug way
-	redir https://$HOSTNAME{uri} 307
-}
 EOF
