@@ -16,7 +16,7 @@ dnf install -y --setopt=install_weak_deps=false dbus
 dnf install -y --setopt=install_weak_deps=false caddy
 
 # systemd-networkd-defaults pull systemd-networkd
-dnf install -y --setopt=install_weak_deps=false openssh-server systemd-networkd-defaults jq tar xz
+dnf install -y --setopt=install_weak_deps=false openssh-server systemd-networkd-defaults systemd-imds jq tar xz
 dnf clean all
 rm -Rf /var/log/dnf5.log /var/lib/dnf/ /var/cache/ /run/dnf 
 

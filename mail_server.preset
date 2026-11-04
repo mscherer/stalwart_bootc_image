@@ -10,3 +10,4 @@ enable set_ipv6.service
 enable systemd-timesyncd.service
 enable stalwart-apply-config.path
 enable nftables.service
+enable systemd-imds-import.service
