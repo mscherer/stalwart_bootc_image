@@ -1,4 +1,4 @@
-# see https://docs.openstack.org/nova/latest/user/metadata.html#metadata-openstack-format
+# https://docs.openstack.org/nova/latest/user/metadata.html#metadata-openstack-format
 dmi:*:svnOpenStackFoundation:*
  IMDS_VENDOR=openstack
  IMDS_DATA_URL=http://169.254.169.254

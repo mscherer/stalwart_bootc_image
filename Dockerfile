@@ -60,7 +60,8 @@ COPY caddy/caddy.tmpfile.conf /usr/lib/tmpfiles.d/caddy.conf
 
 #COPY motd.conf /usr/lib/motd.d/
 
-COPY hwdb.d/openstack.hwdb /usr/lib/udev/hwdb.d/openstack.hwdb
+# see https://github.com/systemd/systemd/pull/44645
+COPY hwdb.d/openstack.hwdb /usr/lib/udev/hwdb.d/41-openstack.hwdb
 
 COPY set_hostname/set_hostname.service /usr/lib/systemd/system/set_hostname.service
 COPY set_hostname/set_hostname.sh      /usr/local/bin/set_hostname.sh
