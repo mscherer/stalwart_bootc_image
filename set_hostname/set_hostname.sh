@@ -7,7 +7,8 @@
 if [ -f /etc/custom_hostname ]; then
 	export HOSTNAME=$(cat /etc/custom_hostname)
 else
-	export HOSTNAME=$(curl http://169.254.169.254/1.0/meta-data/hostname)
+	# tahnks to systemd-imds
+	export HOSTNAME=$(cat /run/credstore/firstboot.hostname)
 fi;
 
 DOMAIN="${HOSTNAME#*.}"
