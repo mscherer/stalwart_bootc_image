@@ -60,11 +60,14 @@ COPY caddy/caddy.tmpfile.conf /usr/lib/tmpfiles.d/caddy.conf
 
 #COPY motd.conf /usr/lib/motd.d/
 
+COPY kargs.d/imds.toml /usr/lib/bootc/kargs.d/imds.toml
+
 COPY set_hostname/set_hostname.service /usr/lib/systemd/system/set_hostname.service
 COPY set_hostname/set_hostname.sh      /usr/local/bin/set_hostname.sh
 
 COPY set_ipv6/set_ipv6.service /usr/lib/systemd/system/set_ipv6.service
 COPY set_ipv6/set_ipv6.sh      /usr/local/bin/set_ipv6.sh
+
 
 # needed to start the various software at boot
 COPY mail_server.preset /usr/lib/systemd/system-preset/01-mail_server.preset
