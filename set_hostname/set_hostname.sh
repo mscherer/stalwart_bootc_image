@@ -15,6 +15,11 @@ hostnamectl hostname $HOSTNAME
 
 # configure Caddy
 cat > /etc/caddy/Caddyfile <<EOF
+# disabled seems to conflict with selinux
+{
+      admin off
+}
+
 # configured by set_hostname.service
 $HOSTNAME $DOMAIN {
 	reverse_proxy :8080
